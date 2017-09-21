@@ -133,9 +133,7 @@ class SiteController extends Controller
     public function actionAdmin()
     {
         $model = new SiteForm();
-//        $site = Site::find()-> where(['=','id',Yii::$app->user->getId()]);
-        $site = Site::find()->where(['=','user_id',Yii::$app->user->getId()]);
-        var_dump(Yii::$app->user->getId());
+        $site = Site::find();
         return $this->render('admin',['model'=>$model,'site'=>$site]);
     }
 }
